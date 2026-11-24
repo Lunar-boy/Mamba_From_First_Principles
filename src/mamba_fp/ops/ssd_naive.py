@@ -33,5 +33,5 @@ def ssd_naive(X, A, B, C, initial_state=None):
         y_t = einsum(C[:, t], h, "b h n, b h p n -> b h p")
         outputs.append(y_t)
 
-Y = torch.stack(outputs, dim=1) # (batch, seqlen, nheads, headdim)
-return Y, h
+    Y = torch.stack(outputs, dim=1) # (batch, seqlen, nheads, headdim)
+    return Y, h
