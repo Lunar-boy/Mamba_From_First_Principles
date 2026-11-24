@@ -1,0 +1,37 @@
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mamba-from-first-principles"
+version = "0.1.0"
+description = "State space models from mathematical principles to efficient GPU implementations"
+requires-python = ">=3.10"
+
+dependencies = [
+    "torch>=2.1",
+    "einops>=0.7",
+    "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+    "matplotlib",
+]
+
+gpu = [
+    "triton",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 88
+
